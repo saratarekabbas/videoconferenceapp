@@ -1,7 +1,5 @@
-// const webSocket = new WebSocket("ws://127.0.0.1:62685") //dummy url for localhost
-const webSocket = new WebSocket("ws://192.168.1.9:62685") 
+const webSocket = new WebSocket("ws://127.0.0.1:3000")
 
-// message from the web server to websocket
 webSocket.onmessage = (event) => {
     handleSignallingData(JSON.parse(event.data))
 }
@@ -46,21 +44,19 @@ function joinCall() {
     document.getElementById("video-call-div")
     .style.display = "inline"
 
-    navigator.getUserMedia({ //a video stream from the device to the local video object
-        video: { //getting the video: with specific details
+    navigator.getUserMedia({
+        video: {
             frameRate: 24,
             width: {
                 min: 480, ideal: 720, max: 1280
             },
             aspectRatio: 1.33333
         },
-        audio: true // getting the audio
-    }, (stream) => {//the stream in the local video
+        audio: true
+    }, (stream) => {
         localStream = stream
         document.getElementById("local-video").srcObject = localStream
 
-        // Creating a peer connection
-        // => Configuration
         let configuration = {
             iceServers: [
                 {
@@ -79,13 +75,12 @@ function joinCall() {
             .srcObject = e.stream
         }
 
-        // Send candidate
         peerConn.onicecandidate = ((e) => {
             if (e.candidate == null)
                 return
             
             sendData({
-                type: "send_candidate", //so, now the server knows that we send this candidate to a person of username (whatever we specify)
+                type: "send_candidate",
                 candidate: e.candidate
             })
         })
@@ -99,11 +94,9 @@ function joinCall() {
     })
 }
 
-// Mute audio function
 let isAudio = true
 function muteAudio() {
     isAudio = !isAudio
-    // to add more than one audio track, we change the 0. however, 0 adds only one audio track.
     localStream.getAudioTracks()[0].enabled = isAudio
 }
 

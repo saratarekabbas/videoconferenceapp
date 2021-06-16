@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/css/style.css">
-    <title>Video Conferencing App</title>
-</head>
-<body>
-    
-<div>
-    <input placeholder="Enter username..." type="text" id="username-input">
-    <br>
-    <button onclick="send-username()">Send</button> <!-- Sends the username to the server -->
-    <button onclick="startCall()">Start Call</button> <!-- Creates an offer when clicked, and it will send this offer to the server, and the server will store the offer against the username that was previously stored -->
-</div>
-<!-- Elements to show the videos -->
-<div id="video-call-div">
-<video muted id="local-video" autoplay></video> <!-- muted mutes the audio of the local source -->
-<video id="remote-video" autoplay></video>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div>
+            <input placeholder="Enter username..."
+                    type="text"
+                    id="username-input" /><br>
+            <button onclick="sendUsername()">Send</button>
+            <button onclick="startCall()">Start Call</button>
+        </div>
+        <div id="video-call-div">
+            <video muted id="local-video" autoplay></video>
+            <video id="remote-video" autoplay></video>
+            <div class="call-action-div">
+                <button onclick="muteVideo()">Mute Video</button>
+                <button onclick="muteAudio()">Mute Audio</button>
+            </div>
+        </div>
+        <script src="./sender.js"></script>
+    </body>
 
-<!-- elements to mute & turn off camera -->
-<div class="call-action-div">
-    <button onclick="muteVideo()">Mute Video</button>
-    <button onclick="muteAudio()">Mute Audio</button>
-</div>
-</div>
-    <script src="./sender.js"></script>
-</body>
 </html>

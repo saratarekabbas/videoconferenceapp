@@ -1,16 +1,14 @@
-const Socket = require("websocket").server //including the websocket library
+const Socket = require("websocket").server
 const http = require("http")
 
 const server = http.createServer((req, res) => {})
 
-//for the server to start running, we should make the following function:
-server.listen(62685, () => {
-    console.log("Listening on port 62685...")
+server.listen(3000, () => {
+    console.log("Listening on port 3000...")
 })
 
 const webSocket = new Socket({ httpServer: server })
 
-// Holds the data of the senders
 let users = []
 
 webSocket.on('request', (req) => {
@@ -24,7 +22,7 @@ webSocket.on('request', (req) => {
         switch(data.type) {
             case "store_user":
 
-                if (user != null) { //means that the server already has someone with this username
+                if (user != null) {
                     return
                 }
 
@@ -106,7 +104,6 @@ function sendData(data, conn) {
     conn.send(JSON.stringify(data))
 }
 
-// To prevent duplicate users: goes through the entire users array and 
 function findUser(username) {
     for (let i = 0;i < users.length;i++) {
         if (users[i].username == username)
