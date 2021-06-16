@@ -1,4 +1,5 @@
-const webSocket = new WebSocket("ws://192.168.1.9:55641") //dummy url for localhost
+// const webSocket = new WebSocket("ws://127.0.0.1:62685") //dummy url for localhost
+const webSocket = new WebSocket("ws://192.168.1.9:62685") 
 
 // message from the web server to websocket
 webSocket.onmessage = (event) => {

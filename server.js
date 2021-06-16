@@ -4,8 +4,8 @@ const http = require("http")
 const server = http.createServer((req, res) => {})
 
 //for the server to start running, we should make the following function:
-server.listen(55641, () => {
-    console.log("Listening on port 3000...")
+server.listen(62685, () => {
+    console.log("Listening on port 62685...")
 })
 
 const webSocket = new Socket({ httpServer: server })
