@@ -2,9 +2,8 @@
 
 session_start();
 
-$con = mysqli_connect('143.138.209.123', '{Sara}', 'Sara@12345');
+$con = mysqli_connect('localhost', '{Sara}', 'Sara@12345');
 // mysqli_connect => Server name, username, password, db name
-// $con = mysqli_connect('143.138.209.123', '{Sara}', 'Sara@12345');
 
 mysqli_select_db($con, 'dev_vca');
 

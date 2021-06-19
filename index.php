@@ -21,7 +21,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="signup.php" method="POST">
+            <form action="signup.php" method="post">
                 <h1>Sign up</h1>
                 <input type="text" placeholder="Username" />
                 <input type="password" placeholder="Password" />
@@ -36,11 +36,11 @@
 
 
         <div class="form-container sign-in-container">
-            <form action="validation.php" method="POST">
+            <form action="validation.php" method="post">
                 <h1>Sign in</h1>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <button>Sign In</button>
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required/>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <script src="/js/registration.js"></script>
+    <script src="js/registration.js"></script>
 </body>
 
 </html>
