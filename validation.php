@@ -21,6 +21,6 @@ if ($num == 1){
     $_SESSION['username'] = $name; // <========================================================== imp
     header('location:home.php'); //landon pageee
 }else{
-    header('location:registration.php');
+    header('location:index.php');
 }
 ?>

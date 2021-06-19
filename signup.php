@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-header('location:registration.php');
+header('location:index.php');
 
 // mysqli_connect => Server name, username, password, db name
 $con = mysqli_connect('localhost', '{Sara}', 'Sara@12345');
