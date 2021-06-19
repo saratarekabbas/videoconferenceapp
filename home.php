@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['username'])){
+    header('location:login.php'); //so that we cannot enter the home page without the login after logging out.
+}
 ?>
 
 <!DOCTYPE html>
