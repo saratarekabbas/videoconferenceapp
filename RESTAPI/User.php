@@ -1,6 +1,6 @@
 <!-- Demonstration of RESTful web services -->
 <?php
-class Users{
+class User{
 
     private $conn;
 
@@ -20,7 +20,7 @@ class Users{
     }
 
     // a function to get ALL users from the database
-    public function getAllUsers(){ //this is needed for names retrieving
+    public function getAllUser(){ //this is needed for names retrieving
         $sql = "select name FROM users";
         $result = $this->conn->query($sql); //result (result of the prev sql line) = this connection append query
 
@@ -33,7 +33,7 @@ class Users{
     }
 
     // a function to get one user from the database based on ID
-    public function getAllsUsers($id){
+    public function getUser($id){
         $sql = "select name FROM users WHERE id = ".$id."";
         $result = $this->conn->query($sql);
 
