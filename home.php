@@ -4,6 +4,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
     header('location:index.php'); //so that we cannot enter the home page without the login after logging out.
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,21 +25,22 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
 </head>
 
 <body>
-
-<a href="logout.php">Logout</a>
-        <!-- bootstrap container fluid -->
+    <!-- bootstrap container fluid -->
     <div class="container-fluid">
+
+
         <!-- Side Pannel -->
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <img id="profile-img" src="assets/users/Sara.png" alt="Sara Avatar">
-                <h2 id="user-name"> <?php echo $_SESSION['username']; ?></h2> <hr> <!-- The registration variable -->
-
+                <img id="profile-img" src="assets/users/Sara.png" alt="Avatar">
+                <h2 id="user-name"> <?php echo $_SESSION['username']; ?></h2> <!-- The registration variable -->
+                <hr>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Home</a></li>
-                    <li class="active"><a href="#">Rooms</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul> <hr>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li> <a href="logout.php">Logout</a></li>
+                </ul>
+                <hr>
 
                 <h4 id="room"> <b> Web Technology Room</b></h4>
                 <!-- bootstrap Collapsible Panel -->
@@ -79,7 +81,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
             </div>
 
             <!-- Page Content Goes Here -->
-            <div id="content">
+            <div class="content">
 
             </div>
 
