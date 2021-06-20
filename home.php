@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username'])){ //if the session variable is not set, then the location will be index.php
     header('location:index.php'); //so that we cannot enter the home page without the login after logging out.
 }
 ?>
@@ -15,6 +15,7 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
     <a href="logout.php">Logout</a>
-    <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
+    <!-- The registration variable -->
+    <h1>Welcome, <?php echo $_SESSION['username']; ?></h1> 
 </body>
 </html>
