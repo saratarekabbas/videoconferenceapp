@@ -6,6 +6,15 @@ jQuery(document).ready(function ($) {
     $(this).addClass('active').siblings('.active').removeClass('active');
   });
 
+  // logout conf
+  $('#logout-btn').click(function () {
+    if (confirm('Are you sure you want to logout?')) {
+      $('#logout-btn').attr("href", "logout.php")
+    }else{
+      return false;
+    }
+  });
+
   //mic src
   const micOn = 'assets/icons/mic-on.png';
   const micOff = 'assets/icons/mic-off.png';
@@ -41,9 +50,7 @@ jQuery(document).ready(function ($) {
   }
   //leave conference function
   function leave() {
-    confirm('Are you sure you want to leave the conference?')
+    confirm('Are you sure you want to leave the conference?');
   }
-
-
 
 });
