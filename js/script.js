@@ -1,5 +1,11 @@
 jQuery(document).ready(function ($) {
 
+  // Nav Buttons clicking
+
+  $('.nav li').click(function () {
+    $(this).addClass('active').siblings('.active').removeClass('active');
+  });
+
   //mic src
   const micOn = 'assets/icons/mic-on.png';
   const micOff = 'assets/icons/mic-off.png';
@@ -37,4 +43,7 @@ jQuery(document).ready(function ($) {
   function leave() {
     confirm('Are you sure you want to leave the conference?')
   }
+
+
+
 });
