@@ -48,7 +48,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse1">Active Users</a>
+                                <a data-toggle="collapse" href="#collapse1">Users</a>
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse">
