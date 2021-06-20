@@ -10,18 +10,19 @@ $con = mysqli_connect('localhost', '{Sara}', 'Sara@12345');
 mysqli_select_db($con, 'dev_vca');
 
 // Stores the name with the POST method from the registration form
-$name = $_POST['user']; //stores the "name" from the form
-$pass = $_POST['password']; //stores the "name" from the form
+$username = $_POST['username']; //stores the "name: username" from the form
+$name = $_POST['name']; //stores the "name: name" from the form
+$pass = $_POST['password']; //stores the "name: password" from the form
 
 // Query
-$s = " select * from users where name = '$name'";
+$s = " select * from users where username = '$username'";
 $result = mysqli_query($con, $s); //a result variable to store this query
 $num = mysqli_num_rows($result); //counts the number of rows and how many times this name appeared in the db table
 
 if ($num == 1){
     echo"Sorry, this username is already taken.";
 }else{
-    $reg = "insert into users(name, password) values ('$name', '$pass')";
+    $reg = "insert into users(username, name, password) values ('$username', '$name','$pass')";
     mysqli_query($con, $reg);
     echo "You have been registered successfully.";
 }

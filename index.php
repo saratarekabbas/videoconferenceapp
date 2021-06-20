@@ -23,7 +23,8 @@
         <div class="form-container sign-up-container">
             <form action="registration.php" method="post">
                 <h1>Sign up</h1>
-                <input type="text" name="user" placeholder="Username" />
+                <input type="text" name="username" placeholder="Username" />
+                <input type="text" name="name" placeholder="Full Name" />
                 <input type="password" name="password" placeholder="Password" />
                 <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
                     <span>Avatar Image</span>
@@ -38,7 +39,7 @@
         <div class="form-container sign-in-container">
             <form action="validation.php" method="post">
                 <h1>Sign in</h1>
-                <input type="text" name="user" placeholder="Username" required />
+                <input type="text" name="username" placeholder="Username" required />
                 <input type="password" name="password" placeholder="Password" required/>
                 <button type="submit">Sign In</button>
             </form>
