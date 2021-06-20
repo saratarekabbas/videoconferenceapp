@@ -11,6 +11,7 @@ mysqli_select_db($con, 'dev_vca');
 // Stores the name with the POST method from the registration form
 $username = $_POST['username']; //getting "name:username" from index.html input
 $pass = $_POST['password'];
+$name = $_POST['name'];
 
 // Query
 $s = " select * from users where username = '$username' && password = '$pass'"; //this will match the username & password from the database
