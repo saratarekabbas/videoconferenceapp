@@ -21,10 +21,10 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="signup.php" method="post">
+            <form action="registration.php" method="post">
                 <h1>Sign up</h1>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <input type="text" name="user" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
                 <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
                     <span>Avatar Image</span>
                     <input type="file" name="fileToUpload" id="fileToUpload">
@@ -38,11 +38,14 @@
         <div class="form-container sign-in-container">
             <form action="validation.php" method="post">
                 <h1>Sign in</h1>
-                <input type="text" placeholder="Username" required />
-                <input type="password" placeholder="Password" required/>
+                <input type="text" name="user" placeholder="Username" required />
+                <input type="password" name="password" placeholder="Password" required/>
                 <button type="submit">Sign In</button>
             </form>
         </div>
+
+
+
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
