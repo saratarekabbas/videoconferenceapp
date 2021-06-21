@@ -32,9 +32,10 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
         <!-- Side Pannel -->
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <img id="profile-img" src="assets/users/Sara.png" alt="Avatar">
-                <h2 id="user-name"> <?php echo $_SESSION['username']; ?></h2> <!-- The registration variable -->
-                <h2 id="user-name"> <?php echo $_SESSION['name']; ?></h2> <!-- The registration variable -->
+                <!-- <img id="profile-img" src="assets/users/default.jpg" alt="Avatar"> --> <!-- This is hard-coded -->
+                <img src="assets/users/<?php echo $_SESSION['avatar']; ?>" alt="avatar">
+                <h3 id="user-name">Sara Tarek <?php echo $_SESSION['name']; ?></h3> <!-- The registration variable -->
+                <h4 id="user-name">@saratarek<?php echo $_SESSION['username']; ?></h4> <!-- The registration variable -->
                 <hr>
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="#">Home</a></li>
@@ -42,19 +43,21 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                     <li> <a id="logout-btn" href="">Logout</a></li>
                 </ul>
                 <hr>
+            </div>
 
-                <h4 id="room"> <b> Web Technology Room</b></h4>
+            <!-- Remove, and add in Rooms -->
+                <!-- <h4 id="room"> <b> Web Technology Room</b></h4> -->
                 <!-- bootstrap Collapsible Panel -->
-                <div class="panel-group">
+                <!-- <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" href="#collapse1">Users</a>
                             </h4>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse">
+                        <div id="collapse1" class="panel-collapse collapse"> -->
                             <!-- Bootstrap Collapsible List Group -->
-                            <ul class="list-group">
+                            <!-- <ul class="list-group">
                                 <li class="list-group-item">Sara Tarek</li>
                                 <li class="list-group-item">Afifah Afifah</li>
                                 <li class="list-group-item">Syed Syed</li>
@@ -78,8 +81,8 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
+           
 
             <!-- Page Content Goes Here -->
             <!-- <div class="home-content">

@@ -13,6 +13,7 @@ mysqli_select_db($con, 'dev_vca');
 $username = $_POST['username']; //stores the "name: username" from the form
 $name = $_POST['name']; //stores the "name: name" from the form
 $pass = $_POST['password']; //stores the "name: password" from the form
+$avatar = $_POST['avatar'];
 
 // Query
 $s = " select * from users where username = '$username'";
@@ -22,7 +23,7 @@ $num = mysqli_num_rows($result); //counts the number of rows and how many times 
 if ($num == 1){
     echo"Sorry, this username is already taken.";
 }else{
-    $reg = "insert into users(username, name, password) values ('$username', '$name','$pass')";
+    $reg = "insert into users(username, name, password, avatar) values ('$username', '$name','$pass', $avatar)";
     mysqli_query($con, $reg);
     echo "You have been registered successfully.";
 }

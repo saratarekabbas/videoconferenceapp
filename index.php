@@ -26,26 +26,24 @@
                 <input type="text" name="username" placeholder="Username" />
                 <input type="text" name="name" placeholder="Full Name" />
                 <input type="password" name="password" placeholder="Password" />
-                <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <span>Avatar Image</span>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
-                </form> -->
+                <input type="file" name="avatar" id="avatar">
+                <!-- <form action="upload.php" method="post" enctype="multipart/form-data"> -->
+                    <!-- <span>Avatar Image</span> -->
+                    <!-- <input type="file" name="fileToUpload" id="fileToUpload"> -->
+                    <!-- <input type="submit" value="Upload Image" name="submit"> -->
+                <!-- </form> -->
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-
 
         <div class="form-container sign-in-container">
             <form action="validation.php" method="post">
                 <h1>Sign in</h1>
                 <input type="text" name="username" placeholder="Username" required />
-                <input type="password" name="password" placeholder="Password" required/>
+                <input type="password" name="password" placeholder="Password" required />
                 <button type="submit">Sign In</button>
             </form>
         </div>
-
-
 
         <div class="overlay-container">
             <div class="overlay">
