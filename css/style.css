@@ -14,6 +14,19 @@
 /* --------------------------------------------- */
 /* Bootstrap Layout Edit */
 /* --------------------------------------------- */
+
+.home-content{
+padding-left: 250px;
+padding-right: 100px;
+}
+
+.home-content h1{
+    font-size: 5rem;
+}
+
+/* --------------------------------------------- */
+/* Bootstrap Layout Edit */
+/* --------------------------------------------- */
 .row.content {
     height: 100vh;
 }

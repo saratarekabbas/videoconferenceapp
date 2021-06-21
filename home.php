@@ -27,8 +27,6 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
 <body>
     <!-- bootstrap container fluid -->
     <div class="container-fluid">
-
-
         <!-- Side Pannel -->
         <div class="row content">
             <div class="col-sm-2 sidenav">
@@ -42,11 +40,36 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 </ul>
                 <hr>
             </div>
+            <!-- Page Content Goes Here -->
+            <div class="home-content">
+                    <!-- <div class="jumbotron">
+                        <h1 class="display-4">Create a Room</h1>
+                        <p class="lead">Create your own video conferencing room now. All it takes is just a unique room name choice, and a click on send, then start call! </p>
+                        <hr class="my-4">
+                        <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room name you want to join in the input box, then click on join room!</p>
+                        <p class="lead">
+                          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                      </div> -->
+                      <h1>Create a Room</h1>
+                      <p class="lead">Create your own video conferencing room now! </p>
+
+                      <input type="text" name="sssss" id="">
+                      
+                      <hr class="my-4">
+
+                      <p >Or, maybe you would like to join a room instead? All you have to do is simply insert the room name you want to join in the input box, then click on join room!</p>
+                       
+                      <!-- <p class="lead">
+                          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p> -->
+            </div>
+
 
             <!-- Remove, and add in Rooms -->
-                <!-- <h4 id="room"> <b> Web Technology Room</b></h4> -->
-                <!-- bootstrap Collapsible Panel -->
-                <!-- <div class="panel-group">
+            <!-- <h4 id="room"> <b> Web Technology Room</b></h4> -->
+            <!-- bootstrap Collapsible Panel -->
+            <!-- <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -54,8 +77,8 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse"> -->
-                            <!-- Bootstrap Collapsible List Group -->
-                            <!-- <ul class="list-group">
+            <!-- Bootstrap Collapsible List Group -->
+            <!-- <ul class="list-group">
                                 <li class="list-group-item">Sara Tarek</li>
                                 <li class="list-group-item">Afifah Afifah</li>
                                 <li class="list-group-item">Syed Syed</li>
@@ -80,22 +103,9 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                         </div>
                     </div>
                 </div> -->
-           
 
-            <!-- Page Content Goes Here -->
-            <!-- <div class="home-content">
-                <button>
-                    Create a room
-                </button>
 
-                <button>
-                    Join a room
-                </button>
-            </div>
 
-            <div class="room-content">
-                <h1>Rooms:</h1>
-            </div> -->
 
         </div>
     </div>
