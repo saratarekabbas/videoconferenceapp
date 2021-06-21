@@ -33,9 +33,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
         <div class="row content">
             <div class="col-sm-2 sidenav">
                 <img id="profile-img" src="assets/users/default.jpg" alt="Avatar"> <!-- This is hard-coded -->
-                <!-- <img src="assets/users/<?php echo $_SESSION['avatar']; ?>" alt="avatar"> -->
-                <h3 id="user-name"><?php echo $_SESSION['name']; ?></h3> <!-- The registration variable -->
-                <h4 id="user-name">@<?php echo $_SESSION['username']; ?></h4> <!-- The registration variable -->
+                <h3 id="user-name">@<?php echo $_SESSION['username']; ?></h3> <!-- The registration variable -->
                 <hr>
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="#">Home</a></li>
