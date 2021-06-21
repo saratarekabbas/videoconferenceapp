@@ -26,7 +26,7 @@
                 <input type="text" name="username" placeholder="Username" />
                 <input type="text" name="name" placeholder="Full Name" />
                 <input type="password" name="password" placeholder="Password" />
-                <input type="file" name="avatar" id="avatar">
+                <!-- <input type="file" name="avatar" id="avatar"> -->
                 <!-- <form action="upload.php" method="post" enctype="multipart/form-data"> -->
                     <!-- <span>Avatar Image</span> -->
                     <!-- <input type="file" name="fileToUpload" id="fileToUpload"> -->
