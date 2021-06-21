@@ -1,4 +1,4 @@
-const webSocket = new WebSocket("ws://127.0.0.1:64692")
+const webSocket = new WebSocket("ws://127.0.0.1:49358")
 
 webSocket.onmessage = (event) => {
     handleSignallingData(JSON.parse(event.data))
@@ -6,24 +6,20 @@ webSocket.onmessage = (event) => {
 
 function handleSignallingData(data) {
     switch (data.type) {
-        case "offer":
-            peerConn.setRemoteDescription(data.offer)
-            createAndSendAnswer()
+        case "answer":
+            peerConn.setRemoteDescription(data.answer)
             break
         case "candidate":
             peerConn.addIceCandidate(data.candidate)
     }
 }
 
-function createAndSendAnswer () {
-    peerConn.createAnswer((answer) => {
-        peerConn.setLocalDescription(answer)
-        sendData({
-            type: "send_answer",
-            answer: answer
-        })
-    }, error => {
-        console.log(error)
+let username
+function sendUsername() {
+
+    username = document.getElementById("username-input").value
+    sendData({
+        type: "store_user"
     })
 }
 
@@ -35,12 +31,7 @@ function sendData(data) {
 
 let localStream
 let peerConn
-let username
-
-function joinCall() {
-
-    username = document.getElementById("username-input").value
-
+function startCall() {
     document.getElementById("video-call-div")
     .style.display = "inline"
 
@@ -78,17 +69,26 @@ function joinCall() {
         peerConn.onicecandidate = ((e) => {
             if (e.candidate == null)
                 return
-            
             sendData({
-                type: "send_candidate",
+                type: "store_candidate",
                 candidate: e.candidate
             })
         })
 
+        createAndSendOffer()
+    }, (error) => {
+        console.log(error)
+    })
+}
+
+function createAndSendOffer() {
+    peerConn.createOffer((offer) => {
         sendData({
-            type: "join_call"
+            type: "store_offer",
+            offer: offer
         })
 
+        peerConn.setLocalDescription(offer)
     }, (error) => {
         console.log(error)
     })

@@ -42,7 +42,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
             </div>
             <!-- Page Content Goes Here -->
             <div class="home-content">
-                    <!-- <div class="jumbotron">
+                <!-- <div class="jumbotron">
                         <h1 class="display-4">Create a Room</h1>
                         <p class="lead">Create your own video conferencing room now. All it takes is just a unique room name choice, and a click on send, then start call! </p>
                         <hr class="my-4">
@@ -51,18 +51,17 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                           <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                         </p>
                       </div> -->
-                      <h1>Create a Room</h1>
-                      <p class="lead">Create your own video conferencing room now! </p>
+                <h1>Create a Room</h1>
+                <p class="lead">Create your own video conferencing room now! </p>
+                <a href="sender.html" class="button" style="vertical-align:middle"><span>Click here to create a room!
+                    </span></a>
 
-                      <input type="text" name="sssss" id="">
-                      
-                      <hr class="my-4">
+                <hr class="my-4">
 
-                      <p >Or, maybe you would like to join a room instead? All you have to do is simply insert the room name you want to join in the input box, then click on join room!</p>
-                       
-                      <!-- <p class="lead">
-                          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                        </p> -->
+                <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room name
+                    you want to join in the input box, then click on join room!</p>
+                <a href="receiver.html" class="button" style="vertical-align:middle"><span>Click here to join a
+                        room!</span></a>
             </div>
 
 
@@ -112,9 +111,6 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
 
     <!-- Script Sources -->
     <script src="js/script.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="web_rtc/sender/sender.js"></script>
-    <script src="web_rtc/receiver/receiver.js"></script>
 </body>
 
 </html>
