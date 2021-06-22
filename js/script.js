@@ -13,43 +13,6 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  //mic src
-  // const micOn = 'assets/icons/mic-on.png';
-  // const micOff = 'assets/icons/mic-off.png';
-  //video src
-  // const videoOn = 'assets/icons/video-on.png';
-  // const videoOff = 'assets/icons/video-off.png';
-  //share src
-  // const shareOn = 'assets/icons/share-on.png';
-  // const shareOff = 'assets/icons/share-off.png';
-
-  // toggle
-  // $('.mic-button').on('click', toggleMic);
-  // $('.video-button').on('click', toggleVideo);
-  // $('.share-button').on('click', toggleShare);
-
-  //leave conference
-  // $('.leave-button').on('click', leave);
-
-  //mic function
-  // function toggleMic() {
-  //   const current = $('#change-image-mic').attr('src');
-  //   $('#change-image-mic').attr('src', current === micOn ? micOff : micOn);
-  // }
-  //video function
-  // function toggleVideo() {
-  //   const current = $('#change-image-video').attr('src');
-  //   $('#change-image-video').attr('src', current === videoOn ? videoOff : videoOn);
-  // }
-  //share function
-  // function toggleShare() {
-  //   const current = $('#change-image-share').attr('src');
-  //   $('#change-image-share').attr('src', current === shareOn ? shareOff : shareOn);
-  // }
-  //leave conference function
-  // function leave() {
-  //   confirm('Are you sure you want to leave the conference?');
-  // }
 
   // ROOM
   ajax
@@ -62,83 +25,59 @@ jQuery(document).ready(function ($) {
       headers: {
         'Content-Type': "application/json"
       },
-      success: function (roomList) { //we don't want to do that..
+      success: function (roomList) { //displaying the room list (display this in "ROOM" button/section not in home)
         console.log(roomList);
-      }
+
+        var roomListContent = "";
+        // var indicators 
+        // var slides //malhash 3elaqa bel app beta3ti
+
+        $.each(roomList, function (index, value) {
+          // Magebnash seeret el members.. mesh 3arfa a-retrieve them ezayyy
+          roomListContent +=
+            '<!-- <h4 id="room"> <b>' + $name + '</b></h4>' +
+            '<div class="panel-group">' +
+            '+<div class="panel panel-default">' +
+            '<div class="panel-heading">' +
+            '<h4 class="panel-title">' +
+            '<a data-toggle="collapse" href="#collapse1">Users</a>' +
+            '</h4>' +
+            '</div>' +
+            '<div id="collapse1" class="panel-collapse collapse">' +
+            ' <ul class="list-group">' +
+            ' <li class="list-group-item">Sara Tarek</li> ' + //RETRIEVE ACTUAL USERS INSTEAD OF HARDCODED...
+            ' <li class="list-group-item">Afifah Afifah</li>' +
+            ' <li class="list-group-item">Syed Syed</li>' +
+            ' <li class="list-group-item">Amir Amir</li>' +
+            ' </ul>' +
+            '</div>' +
+            '</div>' +
+            ' </div> '
+
+          // 3and Syed..................
+          //   if (index == 0) {
+          //     indicators += '<li data-target="#demo" data-slide-to="0" class="active"></li>'
+          // } else {
+          //     indicators += '<li data-target="#demo" data-slide-to="' + index + '" class="active"></li>'
+          // }
+
+          // var activeText = (index == 0) ? 'active' : ''
+
+          // slides += '<div class="carousel-item ' + activeText + '">' +
+          //     '<img id="img' + value.id + '" src="' + value.imageURL + '" alt="' + value.title + '" width="100%">' +
+          //     '<div class="carousel-caption">' +
+          //     '<h3 style="color: white;">' + value.title + '</h3>' +
+          //     '<p style="color: white;">' + value.description + '</p>' +
+          //     '</div>' +
+          //     '</div>'
+
+        })
+        $('#roomListContent').append(roomListContent);
+      },
+      error: err => console.error(err)
     });
   });
-  //       var bannerFormContent = ""
-  //       var indicators = ""
-  //       var slides = ""
 
-  //       $.each(roomList, function (index, value) {
-
-  //         bannerFormContent += '<div class="row">' +
-  //           '<div>' +
-  //           '<div style="margin-top: 30px">' +
-  //           '<p>Edit details for this banner</p>' +
-  //           '<div class="input-group input-group-sm mb-3">' +
-  //           '<div class="input-group-prepend">' +
-  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Image URL</span>' +
-  //           '</div>' +
-  //           '<input id="edit_imageURL_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.imageURL + '">' +
-  //           '</div>' +
-  //           '<div class="input-group input-group-sm mb-3">' +
-  //           '<div class="input-group-prepend">' +
-  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Banner Title</span>' +
-  //           '</div>' +
-  //           '<input id="edit_title_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.title + '">' +
-  //           '</div>' +
-  //           '<div class="input-group input-group-sm mb-3">' +
-  //           '<div class="input-group-prepend">' +
-  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Banner Description</span>' +
-  //           '</div>' +
-  //           '<input id="edit_description_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.description + '">' +
-  //           '</div>' +
-  //           '<button type="button" class="btn-sm btn-primary" onclick="editBanner(' + value.id + ')">Update</button>' +
-  //           '<button type="button" class="btn-sm btn-danger ml-2" onclick="deleteBanner(' + value.id + ')">Delete</button>' +
-  //           '</div>' +
-  //           '</div>' +
-  //           '</div>'
-
-  //         if (index == 0) {
-  //           indicators += '<li data-target="#demo" data-slide-to="0" class="active"></li>'
-  //         } else {
-  //           indicators += '<li data-target="#demo" data-slide-to="' + index + '" class="active"></li>'
-  //         }
-
-  //         var activeText = (index == 0) ? 'active' : ''
-
-  //         slides += '<div class="carousel-item ' + activeText + '">' +
-  //           '<img id="img' + value.id + '" src="' + value.imageURL + '" alt="' + value.title + '" width="100%">' +
-  //           '<div class="carousel-caption">' +
-  //           '<h3 style="color: white;">' + value.title + '</h3>' +
-  //           '<p style="color: white;">' + value.description + '</p>' +
-  //           '</div>' +
-  //           '</div>'
-  //       });
-
-  //       var bannerContent = '<div id="demo" class="carousel slide" data-ride="carousel">' +
-  //         '<ul class="carousel-indicators">' +
-  //         indicators +
-  //         '</ul>' +
-  //         '<div class="carousel-inner">' +
-  //         slides +
-  //         '</div>' +
-  //         '<a class="carousel-control-prev" href="#demo" data-slide="prev">' +
-  //         '<span class="carousel-control-prev-icon"></span>' +
-  //         '</a>' +
-  //         '<a class="carousel-control-next" href="#demo" data-slide="next">' +
-  //         '<span class="carousel-control-next-icon"></span>' +
-  //         '</a>' +
-  //         '</div>';
-
-  //       $("#myBannerForm").append(bannerFormContent)
-  //       $("#myCarousel").append(bannerContent)
-  //     },
-  //     error: err => console.error(err)
-  //   });
-  // })
 
   function addRoom() {
     var newRoom = {
@@ -149,27 +88,21 @@ jQuery(document).ready(function ($) {
     $.ajax({
       url: "https://utmdarkmoon.tk/test/video2/api/RestController.php?view=create",
       type: "POST",
-      data: datas,
+      data: newRoom,
       dataType: "json",
       success: function (data, status, xhr) {
-        var successfulRoom = document.createElement("div");
-        successfulRoom.addClass("alert alert-success");
-        successfulRoom.data("role", "alert");
-        successfulRoom.textContent("The room was added successfully!");
-        $("#alert-room-add").append(successfulRoom);
 
-        alert("The room has been added successfully!");
+        var alertRoomSuccessful = '<div class="alert alert-success" role="alert">The room was added successfully!</div>';
+        $("#alert-room-add").append(alertRoomSuccessful);
+
+        // alert("The room has been added successfully!");
         location.reload()
       },
       error: function (data, status, xhr) {
-        var unsuccessfulRoom = document.createElement("div");
-        unsuccessfulRoom.addClass("alert alert-danger");
-        unsuccessfulRoom.data("role", "alert");
-        unsuccessfulRoom.textContent("Sorry, the room was not added!");
-
-        $("#alert-room-add").append(unsuccessfulRoom);
-
-        alert(xhr)
+        
+        var alertRoomUnsuccessful = '<div class="alert alert-danger" role="alert">Sorry, the room was not added due to error: ' + xhr +'</div>';
+        $("#alert-room-add").append(alertRoomUnsuccessful);
+        // alert(xhr)
       }
     })
 
@@ -217,6 +150,50 @@ jQuery(document).ready(function ($) {
   //       alert(xhr)
   //     }
   //   })
+  // }
+
+
+
+
+
+
+
+  //mic src
+  // const micOn = 'assets/icons/mic-on.png';
+  // const micOff = 'assets/icons/mic-off.png';
+  //video src
+  // const videoOn = 'assets/icons/video-on.png';
+  // const videoOff = 'assets/icons/video-off.png';
+  //share src
+  // const shareOn = 'assets/icons/share-on.png';
+  // const shareOff = 'assets/icons/share-off.png';
+
+  // toggle
+  // $('.mic-button').on('click', toggleMic);
+  // $('.video-button').on('click', toggleVideo);
+  // $('.share-button').on('click', toggleShare);
+
+  //leave conference
+  // $('.leave-button').on('click', leave);
+
+  //mic function
+  // function toggleMic() {
+  //   const current = $('#change-image-mic').attr('src');
+  //   $('#change-image-mic').attr('src', current === micOn ? micOff : micOn);
+  // }
+  //video function
+  // function toggleVideo() {
+  //   const current = $('#change-image-video').attr('src');
+  //   $('#change-image-video').attr('src', current === videoOn ? videoOff : videoOn);
+  // }
+  //share function
+  // function toggleShare() {
+  //   const current = $('#change-image-share').attr('src');
+  //   $('#change-image-share').attr('src', current === shareOn ? shareOff : shareOn);
+  // }
+  //leave conference function
+  // function leave() {
+  //   confirm('Are you sure you want to leave the conference?');
   // }
 
 });

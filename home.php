@@ -68,11 +68,19 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                     room!</span></a> -->
         </div>
 
-        <div id="alert-room-add">
-
+        <div id="alert-room-add"> 
         </div>
 
-          
+          <!-- div -->
+
+<br><br><br><br><br>
+<!-- remember to display it separately later on.. -->
+<!-- SECTION 2: ROOM LIST -->
+<div id="roomListContent">
+    
+
+</div>
+
 
 
 
