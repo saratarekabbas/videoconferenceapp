@@ -43,6 +43,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
             <!-- Page Content Goes Here -->
             <h1>Create a Room</h1>
             <p class="lead">Create your own video conferencing room now! </p>
+            <form>
             <div id="create-room">
                   <label for="room-name">Room Name</label>
                   <br>
@@ -52,9 +53,9 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                  <br>
                   <textarea type="text" id="room-description" name="description" placeholder="Room description.."></textarea>
                   <br>
-                  <button class="button" onclick="addRoom()" style="vertical-align:middle"><span>Create </span></button>
+                  <button class="button" onclick="addRoom()" style="vertical-align:middle"><span>Create</span></button>
               </div>
-
+              </form>
             <hr class="my-4">
 
             <!-- <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room
