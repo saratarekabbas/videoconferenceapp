@@ -34,13 +34,16 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 <h3 id="user-name">@<?php echo $_SESSION['username']; ?></h3> <!-- The registration variable -->
                 <hr>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Rooms</a></li>
+                    <li class="active"><a href="#" onclick="displayHome()">Home</a></li>
+                    <li><a href="#" >Rooms</a></li>
+                    <li><a href="#">Edit Profile</a></li>
                     <li> <a id="logout-btn" href="">Logout</a></li>
                 </ul>
                 <hr>
             </div>
             <!-- Page Content Goes Here -->
+           
+            <div id="home-content">   
             <h1>Create a Room</h1>
             <p class="lead">Create your own video conferencing room now! </p>
             <form>
@@ -54,7 +57,7 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                   <textarea type="text" id="room-description" name="description" placeholder="Room description.."></textarea>
                   <br>
                   <button class="button" onclick="addRoom()" style="vertical-align:middle"><span>Create</span></button>
-              </div>
+            </div>
               </form>
             <hr class="my-4">
 
@@ -63,6 +66,15 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 you want to join in the input box, then click on join room!</p>
             <a href="receiver.html" class="button" style="vertical-align:middle"><span>Click here to join a
                     room!</span></a> -->
+        </div>
+
+        <div id="alert-room-add">
+
+        </div>
+
+          
+
+
 
 
             <!-- <h4 id="room"> <b> Web Technology Room</b></h4> -->
@@ -103,7 +115,6 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 </div> -->
 
 
-        </div>
 
         <!-- Script Sources -->
         <script src="js/script.js"></script>

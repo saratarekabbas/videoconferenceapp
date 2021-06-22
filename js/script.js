@@ -52,21 +52,21 @@ jQuery(document).ready(function ($) {
   // }
 
   // ROOM
-
-  // ajax
-  // $(function () {
-  //   $.ajax({
-  //     url: "https://utmdarkmoon.tk/test/video2/api/RestController.php?view=all",
-  //     method: "GET",
-  //     encode: true,
-  //     processData: false,
-  //     headers: {
-  //       'Content-Type': "application/json"
-  //     },
-  //     success: function (roomList) { //we don't want to do that..
-
-  //       console.log(roomList);
-
+  ajax
+  $(function () {
+    $.ajax({
+      url: "https://utmdarkmoon.tk/test/video2/api/RestController.php?view=all",
+      method: "GET",
+      encode: true,
+      processData: false,
+      headers: {
+        'Content-Type': "application/json"
+      },
+      success: function (roomList) { //we don't want to do that..
+        console.log(roomList);
+      }
+    });
+  });
   //       var bannerFormContent = ""
   //       var indicators = ""
   //       var slides = ""
@@ -152,17 +152,30 @@ jQuery(document).ready(function ($) {
       data: datas,
       dataType: "json",
       success: function (data, status, xhr) {
+        var successfulRoom = document.createElement("div");
+        successfulRoom.addClass("alert alert-success");
+        successfulRoom.data("role", "alert");
+        successfulRoom.textContent("The room was added successfully!");
+        $("#alert-room-add").append(successfulRoom);
+
         alert("The room has been added successfully!");
         location.reload()
       },
       error: function (data, status, xhr) {
+        var unsuccessfulRoom = document.createElement("div");
+        unsuccessfulRoom.addClass("alert alert-danger");
+        unsuccessfulRoom.data("role", "alert");
+        unsuccessfulRoom.textContent("Sorry, the room was not added!");
+
+        $("#alert-room-add").append(unsuccessfulRoom);
+
         alert(xhr)
       }
     })
 
   }
 
-  // updating the banner
+  // updating the profile data
   // function editBanner(id) {
   //   var datas = {
   //     "id": id,
