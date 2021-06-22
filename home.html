@@ -41,31 +41,29 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 <hr>
             </div>
             <!-- Page Content Goes Here -->
-            <div class="home-content">
-                <!-- <div class="jumbotron">
-                        <h1 class="display-4">Create a Room</h1>
-                        <p class="lead">Create your own video conferencing room now. All it takes is just a unique room name choice, and a click on send, then start call! </p>
-                        <hr class="my-4">
-                        <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room name you want to join in the input box, then click on join room!</p>
-                        <p class="lead">
-                          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                        </p>
-                      </div> -->
-                <h1>Create a Room</h1>
-                <p class="lead">Create your own video conferencing room now! </p>
-                <a href="sender.html" class="button" style="vertical-align:middle"><span>Click here to create a room!
-                    </span></a>
+            <h1>Create a Room</h1>
+            <p class="lead">Create your own video conferencing room now! </p>
+            <div id="create-room">
+                  <label for="room-name">Room Name</label>
+                  <br>
+                  <input type="text" id="room-name" name="name" placeholder="Room name..">
+                  <br>
+                  <label for="room-description">Room Description</label>
+                 <br>
+                  <textarea type="text" id="room-description" name="description" placeholder="Room description.."></textarea>
+                  <br>
+                  <button class="button" onclick="addRoom()" style="vertical-align:middle"><span>Create </span></button>
+              </div>
 
-                <hr class="my-4">
+            <hr class="my-4">
 
-                <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room name
-                    you want to join in the input box, then click on join room!</p>
-                <a href="receiver.html" class="button" style="vertical-align:middle"><span>Click here to join a
-                        room!</span></a>
-            </div>
+            <!-- <p>Or, maybe you would like to join a room instead? All you have to do is simply insert the room
+                name
+                you want to join in the input box, then click on join room!</p>
+            <a href="receiver.html" class="button" style="vertical-align:middle"><span>Click here to join a
+                    room!</span></a> -->
 
 
-            <!-- Remove, and add in Rooms -->
             <!-- <h4 id="room"> <b> Web Technology Room</b></h4> -->
             <!-- bootstrap Collapsible Panel -->
             <!-- <div class="panel-group">
@@ -104,13 +102,10 @@ if(!isset($_SESSION['username'])){ //if the session variable is not set, then th
                 </div> -->
 
 
-
-
         </div>
-    </div>
 
-    <!-- Script Sources -->
-    <script src="js/script.js"></script>
+        <!-- Script Sources -->
+        <script src="js/script.js"></script>
 </body>
 
 </html>

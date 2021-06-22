@@ -15,12 +15,12 @@
 /* Bootstrap Layout Edit */
 /* --------------------------------------------- */
 
-.home-content{
-padding-left: 250px;
-padding-right: 100px;
+.home-content {
+    padding-left: 250px;
+    padding-right: 100px;
 }
 
-.home-content h1{
+.home-content h1 {
     font-size: 5rem;
 }
 
@@ -59,15 +59,15 @@ padding-right: 100px;
     padding-bottom: 5px;
 }
 
-.nav li a{
+.nav li a {
     color: white;
 }
 
-.nav li a:hover{
+.nav li a:hover {
     color: #FF416C;
 }
 
-.active a{
+.active a {
     background: #FF416C;
     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
     background: linear-gradient(to right, #FF4B2B, #FF416C);
@@ -77,51 +77,85 @@ padding-right: 100px;
 }
 
 /* --------------------------------------------- */
+/* Input Fields */
+/* --------------------------------------------- */
+#create-room {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding-left: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+textarea {
+    width: 85%;
+    height: 100px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    background-color: #fafafa;
+    resize: none;
+}
+
+input[type=text] {
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #fafafa;
+    border: 2px solid lightgrey;
+}
+
+/* --------------------------------------------- */
 /* Animated button */
 /* --------------------------------------------- */
+
 .button {
     display: inline-block;
     border-radius: 4px;
-    background: #FF416C;
+    /* background: #FF416C;
     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C); */
+    background: rgb(20, 20, 20);;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 24px;
-    padding: 20px;
-    width: 430px;
+    font-size: 22px;
+    padding: 10px;
+    width: 200px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-  }
-  
-  .button span {
+}
+
+.button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  .button span:after {
+}
+
+.button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-    
-  }
-  
-  .button:hover span {
+}
+
+.button:hover span {
     padding-right: 25px;
-    
-  }
-  
-  .button:hover span:after {
+}
+
+.button:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
 
 /* --------------------------------------------- */
 /* Video */

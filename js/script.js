@@ -50,4 +50,160 @@ jQuery(document).ready(function ($) {
   // function leave() {
   //   confirm('Are you sure you want to leave the conference?');
   // }
+
+  // ROOM
+
+  // ajax
+  // $(function () {
+  //   $.ajax({
+  //     url: "https://utmdarkmoon.tk/test/video2/api/RestController.php?view=all",
+  //     method: "GET",
+  //     encode: true,
+  //     processData: false,
+  //     headers: {
+  //       'Content-Type': "application/json"
+  //     },
+  //     success: function (roomList) { //we don't want to do that..
+
+  //       console.log(roomList);
+
+  //       var bannerFormContent = ""
+  //       var indicators = ""
+  //       var slides = ""
+
+  //       $.each(roomList, function (index, value) {
+
+  //         bannerFormContent += '<div class="row">' +
+  //           '<div>' +
+  //           '<div style="margin-top: 30px">' +
+  //           '<p>Edit details for this banner</p>' +
+  //           '<div class="input-group input-group-sm mb-3">' +
+  //           '<div class="input-group-prepend">' +
+  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Image URL</span>' +
+  //           '</div>' +
+  //           '<input id="edit_imageURL_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.imageURL + '">' +
+  //           '</div>' +
+  //           '<div class="input-group input-group-sm mb-3">' +
+  //           '<div class="input-group-prepend">' +
+  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Banner Title</span>' +
+  //           '</div>' +
+  //           '<input id="edit_title_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.title + '">' +
+  //           '</div>' +
+  //           '<div class="input-group input-group-sm mb-3">' +
+  //           '<div class="input-group-prepend">' +
+  //           '<span class="input-group-text" id="inputGroup-sizing-sm">Banner Description</span>' +
+  //           '</div>' +
+  //           '<input id="edit_description_' + value.id + '" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="' + value.description + '">' +
+  //           '</div>' +
+  //           '<button type="button" class="btn-sm btn-primary" onclick="editBanner(' + value.id + ')">Update</button>' +
+  //           '<button type="button" class="btn-sm btn-danger ml-2" onclick="deleteBanner(' + value.id + ')">Delete</button>' +
+  //           '</div>' +
+  //           '</div>' +
+  //           '</div>'
+
+  //         if (index == 0) {
+  //           indicators += '<li data-target="#demo" data-slide-to="0" class="active"></li>'
+  //         } else {
+  //           indicators += '<li data-target="#demo" data-slide-to="' + index + '" class="active"></li>'
+  //         }
+
+  //         var activeText = (index == 0) ? 'active' : ''
+
+  //         slides += '<div class="carousel-item ' + activeText + '">' +
+  //           '<img id="img' + value.id + '" src="' + value.imageURL + '" alt="' + value.title + '" width="100%">' +
+  //           '<div class="carousel-caption">' +
+  //           '<h3 style="color: white;">' + value.title + '</h3>' +
+  //           '<p style="color: white;">' + value.description + '</p>' +
+  //           '</div>' +
+  //           '</div>'
+  //       });
+
+  //       var bannerContent = '<div id="demo" class="carousel slide" data-ride="carousel">' +
+  //         '<ul class="carousel-indicators">' +
+  //         indicators +
+  //         '</ul>' +
+  //         '<div class="carousel-inner">' +
+  //         slides +
+  //         '</div>' +
+  //         '<a class="carousel-control-prev" href="#demo" data-slide="prev">' +
+  //         '<span class="carousel-control-prev-icon"></span>' +
+  //         '</a>' +
+  //         '<a class="carousel-control-next" href="#demo" data-slide="next">' +
+  //         '<span class="carousel-control-next-icon"></span>' +
+  //         '</a>' +
+  //         '</div>';
+
+  //       $("#myBannerForm").append(bannerFormContent)
+  //       $("#myCarousel").append(bannerContent)
+  //     },
+  //     error: err => console.error(err)
+  //   });
+  // })
+
+  function addRoom() {
+    var newRoom = {
+      "name": $('#room-name').val(),
+      "description": $('#room-description').val()
+    };
+
+    $.ajax({
+      url: "https://utmdarkmoon.tk/test/video2/api/RestController.php?view=create",
+      type: "POST",
+      data: datas,
+      dataType: "json",
+      success: function (data, status, xhr) {
+        alert("The room has been added successfully!");
+        location.reload()
+      },
+      error: function (data, status, xhr) {
+        alert(xhr)
+      }
+    })
+
+  }
+
+  // updating the banner
+  // function editBanner(id) {
+  //   var datas = {
+  //     "id": id,
+  //     "imageURL": $("#edit_imageURL_" + id).val(),
+  //     "title": $("#edit_title_" + id).val(),
+  //     "description": $("#edit_description_" + id).val()
+  //   };
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "https://utmdarkmoon.tk/test/banner/api/RestController.php?view=update",
+  //     data: datas,
+  //     dataType: "json",
+  //     success: function (data, status, xhr) {
+  //       alert("Banner updated successful");
+  //       location.reload()
+  //     },
+  //     error: function (data, status, xhr) {
+  //       alert(xhr)
+  //     }
+  //   });
+  // }
+
+  // function deleteBanner(id) {
+  //   var datas = {
+  //     "id": id
+  //   };
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "https://utmdarkmoon.tk/test/banner/api/RestController.php?view=delete",
+  //     data: datas,
+  //     dataType: "json",
+  //     success: function (data, status, xhr) {
+  //       alert("Banner deleted successfully")
+  //       location.reload()
+  //     },
+  //     error: function (data, status, xhr) {
+  //       alert(xhr)
+  //     }
+  //   })
+  // }
+
 });
